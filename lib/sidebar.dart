@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SideBar extends StatelessWidget {
+  SideBar({this.onPageSelected});
+
+  Function(String pagePath) onPageSelected;
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -22,12 +26,20 @@ class SideBar extends StatelessWidget {
         ),
         ListTile(
           leading: Icon(Icons.change_history),
-          title: Text('Change history'),
+          title: Text('分析'),
           onTap: () {
-            // change app state...
-            Navigator.pop(context); // close the drawer
+            onPageSelected('dashboard');
+            Navigator.pop(context);
           },
-        )
+        ),
+        ListTile(
+          leading: Icon(Icons.change_history),
+          title: Text('Dota'),
+          onTap: () {
+            onPageSelected('dota');
+            Navigator.pop(context);
+          },
+        ),
       ],
     );
   }

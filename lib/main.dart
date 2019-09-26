@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
-      routes: {'/': (context) => HomePage(path: 'dashboard')},
+      routes: {
+        '/': (context) => HomePage(),
+      },
       //home: HomePage(title: 'Flutter Demo Home Page'),
     );
   }
